@@ -1,0 +1,11 @@
+{
+  "name": "mocha-selenium-report",
+  "version": "0.0.1",
+  "description": "Mocha Selenium Reporter",
+  "main": "mocha-selenium-reporter.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "tmashuang",
+  "license": "MIT"
+}
