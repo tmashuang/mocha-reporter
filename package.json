@@ -1,11 +1,15 @@
 {
-  "name": "mocha-selenium-report",
+  "name": "mocha-report",
   "version": "0.0.1",
-  "description": "Mocha Selenium Reporter",
-  "main": "mocha-selenium-reporter.js",
+  "description": "Mocha Reporter",
+  "private": true,
+  "main": "./src/mocha--reporter.js",
   "scripts": {
     "test": "test"
   },
   "author": "tmashuang",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
 }
