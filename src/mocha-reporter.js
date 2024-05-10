@@ -47,7 +47,7 @@ function MochaSeleniumReporter(runner, options) {
     failures.push(test);
   });
 
-  runner.once(EVENT_RUN_END, function () {
+  runner.once(EVENT_RUN_END, async function () {
     var obj = {
       stats: self.stats,
       tests: tests.map(clean),
@@ -66,6 +66,7 @@ function MochaSeleniumReporter(runner, options) {
           const newdata = mergeReports(data, obj)
           const sendit = JSON.stringify(newdata, null , 2)
           fs.writeFileSync(output, sendit)
+
         } catch (error) {
           console.log(error)
         }
@@ -83,6 +84,17 @@ function MochaSeleniumReporter(runner, options) {
     } else {
       process.stdout.write(json);
     }
+
+    const { dir } = path.parse(output)
+
+    const htmlReportAppPath = require.resolve("mocha-report-page")
+
+    const srcFile = path.parse(htmlReportAppPath).base
+
+    await fs.promises.copyFile(
+      htmlReportAppPath,
+      path.resolve(dir, srcFile)
+    )
   });
 }
 
