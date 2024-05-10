@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "Mocha Reporter",
   "private": true,
-  "main": "./src/mocha--reporter.js",
+  "main": "./src/mocha-reporter.js",
   "scripts": {
     "test": "test"
   },
   "author": "tmashuang",
   "license": "MIT",
+  "dependencies": {
+    "mocha-report-page": "file:../mocha-report-page"
+  },
   "devDependencies": {
     "mocha": "^10.4.0"
   }
